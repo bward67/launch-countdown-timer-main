@@ -1,0 +1,195 @@
+/*----------------
+   VARIABLES
+-----------------*/
+:root {
+  --clr-p-grayish-blue: hsl(237, 18%, 59%);
+  --clr-p-soft-red: hsl(345, 95%, 68%);
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-dark-desaturated-blue: hsl(236, 21%, 26%);
+  --clr-dark-desaturated-blue-o-75: hsla(236, 21%, 26%, 0.75);
+  --clr-very-dark-blue: hsl(235, 16%, 14%);
+  --clr-very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+
+  --br-main: 0.3rem;
+  --br-big: 0.8rem;
+}
+
+/*----------------
+   GLOBAL STYLES
+-----------------*/
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+main {
+  width: 100%;
+  background-color: var(--clr-very-dark-mostly-black-blue);
+}
+h1 {
+  font-size: 1.2rem;
+  margin: 8rem auto 4rem auto;
+  letter-spacing: 5px;
+  color: var(--clr-white);
+  width: 90%;
+}
+h2 {
+  font-size: 2.5rem;
+  color: var(--clr-p-soft-red);
+  display: grid;
+  z-index: 1;
+}
+h3 {
+  letter-spacing: 3px;
+  color: var(--clr-p-grayish-blue);
+  margin-top: 1.5rem;
+}
+img {
+  max-width: 100%;
+}
+/*----------------
+   MAIN AREA STYLES
+-----------------*/
+.background-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0px;
+  gap: 0.6rem;
+  font-size: 0.5rem;
+  margin: 0 auto 14rem auto;
+  width: 90%;
+}
+.display-box {
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--br-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1500ms;
+  width: 4.5rem;
+}
+
+.display-box-top {
+  position: absolute;
+  background-color: var(--clr-dark-desaturated-blue-o-75);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  border-radius: var(--br-main);
+}
+.display-box:hover {
+  transform: rotateX(180deg);
+}
+.display-box-bottom {
+  position: absolute;
+  background-color: var(--clr-dark-desaturated-blue);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-radius: var(--br-main);
+}
+
+/*----------------
+   FOOTER STYLES
+-----------------*/
+footer {
+  position: relative;
+  background-image: url(images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 100%;
+  background-size: 300% 100%; /*width , height*/
+  height: 12rem;
+  z-index: 10;
+}
+
+.socials-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 7.5rem;
+  /*position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);*/
+  cursor: pointer;
+}
+
+.socials-container > * {
+  fill: #8385a9;
+}
+/*  THIS IS GIVING ME JUST THE TOP LEFT OF THE SVG ???
+.facebook svg {
+  width: 60%;
+  height: auto;
+}*/
+
+.facebook:hover,
+.pinterest:hover,
+.instagram:hover {
+  fill: var(--clr-p-soft-red);
+}
+
+/*!----------------
+/*!   MEDIA QUERIES
+/*!-----------------*/
+@media (min-width: 768px) {
+  body {
+    max-width: 1440px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 7px;
+  }
+  h2 {
+    font-size: 5rem;
+  }
+  h3 {
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
+
+  .display-container {
+    margin-block: 6rem 10rem;
+    gap: 2rem;
+  }
+  .display-box {
+    width: 9.5rem;
+  }
+
+  .display-box-top,
+  .display-box-bottom {
+    border-radius: var(--br-big);
+  }
+  footer {
+    background-position: auto;
+    background-size: auto;
+  }
+  .socials-container {
+    padding-top: 5.5rem;
+    gap: 2rem;
+  }
+}
